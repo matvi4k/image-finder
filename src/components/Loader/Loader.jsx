@@ -5,11 +5,11 @@ export function Loader() {
   return (
     <Grid
       visible={true}
-      height="80"
-      width="80"
-      color="#4354b0"
+      height="50"
+      width="50"
+      color="#000000"
       ariaLabel="grid-loading"
-      radius="12.5"
+      radius="8"
       wrapperClass={style.wrapper}
     />
   );

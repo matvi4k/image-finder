@@ -8,20 +8,4 @@
   background: #182027;
   color: #fff;
   cursor: pointer;
-  font: inherit;
-  font-size: 15px;
-  font-weight: 650;
-  transition:
-    background 160ms ease,
-    transform 160ms ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-  background: #303c46;
-}
-
-.button:focus-visible {
-  outline: 3px solid #f4a340;
-  outline-offset: 3px;
 }
