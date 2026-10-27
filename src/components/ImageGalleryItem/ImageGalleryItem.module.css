@@ -1,0 +1,47 @@
+.item {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e9edf0;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 8%);
+}
+
+.imageButton {
+  display: block;
+  width: 100%;
+  height: 220px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.imageButton:hover .image {
+  transform: scale(1.045);
+}
+
+.imageButton:focus-visible {
+  outline: 3px solid #f4a340;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .imageButton {
+    height: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .imageButton {
+    height: clamp(130px, 42vw, 210px);
+  }
+}

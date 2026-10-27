@@ -1,7 +1,6 @@
 import { Component } from "react";
-import s from './SearchBar.module.css'
-
 import { IoIosSearch } from "react-icons/io";
+import style from "./Searchbar.module.css";
 
 class SearchBar extends Component {
   state = {
@@ -18,7 +17,10 @@ class SearchBar extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    this.props.onSubmit(this.state.query)
+    const query = this.state.query.trim()
+    if (!query) return
+
+    this.props.onSubmit(query)
 
     this.setState({
         query: ""
@@ -27,14 +29,14 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <header className={s.header}>
-        <form className={s.form} onSubmit={this.handleSubmit}>
-          <button type="submit" className={s.button}>
+      <header className={style.searchbar}>
+        <form className={style.form} onSubmit={this.handleSubmit}>
+          <button type="submit" className={style.button} aria-label="Search">
             <IoIosSearch />
           </button>
 
           <input
-            className={s.input}
+            className={style.input}
             name="query"
             value={this.state.query}
             type="text"
