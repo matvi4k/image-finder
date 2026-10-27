@@ -3,7 +3,7 @@ import { ImageGalleryItem } from "../ImageGalleryItem/ImageGalleryItem";
 import { Loader } from "../Loader/Loader";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
-import pixabayApi from "../../services/pixabay-api";
+import api from "../../services/api";
 
 import s from "./ImageGallery.module.css";
 
@@ -41,7 +41,7 @@ class ImageGallery extends Component {
   fetchImages = () => {
     const { searchQuery, currentPage } = this.state;
     this.setState({ isLoading: true });
-    pixabayApi({ searchQuery, currentPage })
+    api({ searchQuery, currentPage })
       .then(({ data }) => {
         this.setState((prevState) => ({
           hits: [...prevState.hits, ...data.hits],
